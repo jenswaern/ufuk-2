@@ -32,12 +32,12 @@
           </ul>
         </nav>
 
-        <button class="site-header__menu-button text-link-sm" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="menu" data-menu-open>
+        <button class="site-header__menu-button text-link-sm" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="menu" lang="sv" data-menu-open>
           Meny
         </button>
       </header>
 
-      <dialog class="menu" id="menu" aria-label="Meny" data-menu>
+      <dialog class="menu" id="menu" aria-label="Meny" lang="sv" data-menu>
         <div class="menu__header">
           <span class="text-link-sm" aria-hidden="true">Ufuk Demir</span>
           <button class="menu__close text-link-sm" type="button" data-menu-close>Stäng</button>
@@ -81,26 +81,26 @@
 
         <section class="section gallery-grid" aria-label="Gallery">
           <figure class="media-card media-card--wide gallery-grid__item gallery-grid__item--1">
-            <img src="images/gallery-1.jpg" width="1834" height="2751" alt="Sunlit white walls and a staircase against a deep blue sky" />
+            <img src="images/gallery-1-1834.webp" srcset="images/gallery-1-800.webp 800w, images/gallery-1-1834.webp 1834w" sizes="(min-width: 1440px) 1376px, 96vw" width="1834" height="2751" fetchpriority="high" alt="Sunlit white walls and a staircase against a deep blue sky" />
           </figure>
 
           <figure class="media-card media-card--portrait gallery-grid__item gallery-grid__item--2">
             <picture>
-              <source media="(max-width: 767px)" srcset="images/gallery-2-mobile.jpg" width="2156" height="2751" />
-              <img src="images/gallery-2.jpg" width="1834" height="2751" loading="lazy" alt="Modern building against a blue sky" />
+              <source media="(max-width: 767px)" srcset="images/gallery-2-mobile-500.webp 500w, images/gallery-2-mobile-1000.webp 1000w" sizes="62vw" width="2156" height="2751" />
+              <img src="images/gallery-2-1344.webp" srcset="images/gallery-2-700.webp 700w, images/gallery-2-1344.webp 1344w" sizes="(min-width: 1440px) 672px, 47vw" width="1834" height="2751" loading="lazy" alt="Modern building against a blue sky" />
             </picture>
           </figure>
 
           <figure class="media-card media-card--landscape gallery-grid__item gallery-grid__item--3">
             <picture>
-              <source media="(max-width: 767px)" srcset="images/gallery-3-mobile.jpg" width="1834" height="2751" />
-              <img src="images/gallery-3.jpg" width="1834" height="2751" loading="lazy" alt="Architectural detail" />
+              <source media="(max-width: 767px)" srcset="images/gallery-3-mobile-300.webp 300w, images/gallery-3-mobile-600.webp 600w" sizes="29vw" width="1834" height="2751" />
+              <img src="images/gallery-3-1344.webp" srcset="images/gallery-3-700.webp 700w, images/gallery-3-1344.webp 1344w" sizes="(min-width: 1440px) 672px, 47vw" width="1834" height="2751" loading="lazy" alt="Architectural detail" />
             </picture>
           </figure>
         </section>
 
         <section class="section list-section" aria-labelledby="list-section-title">
-          <h2 class="list-section__title text-subheading" id="list-section-title">Kompetenser</h2>
+          <h2 class="list-section__title text-subheading" id="list-section-title" lang="sv">Kompetenser</h2>
 
           <div class="list-group list-group--1">
             <h3 class="text-body text-secondary">Skills</h3>
@@ -149,7 +149,7 @@
           </div>
 
           <figure class="media-card media-card--portrait about-section__image">
-            <img src="images/portrait.jpg" width="605" height="598" loading="lazy" alt="Portrait of Ufuk Demir smiling, wearing glasses and a black t-shirt" />
+            <img src="images/portrait.webp" width="605" height="598" loading="lazy" alt="Portrait of Ufuk Demir smiling, wearing glasses and a black t-shirt" />
           </figure>
         </section>
 
@@ -174,15 +174,15 @@
             <button class="gallery-slider__button gallery-slider__button--next" type="button" aria-label="Next image" aria-controls="case-slides" data-slider-next></button>
           </div>
 
-          <ul class="gallery-slider__track" id="case-slides" role="region" aria-label="Images" tabindex="0" data-slider-track>
+          <ul class="gallery-slider__track" id="case-slides" aria-label="Case images" tabindex="0" data-slider-track>
             <li class="media-card media-card--portrait gallery-slider__slide">
-              <img src="images/slider-1.png" width="780" height="1038" loading="lazy" alt="Dalmatian curled up on an orange sofa" />
+              <img src="images/slider-1-780.webp" srcset="images/slider-1-600.webp 600w, images/slider-1-780.webp 780w" sizes="(min-width: 1440px) 908px, (min-width: 768px) 63vw, 76vw" width="780" height="1038" loading="lazy" alt="Dalmatian curled up on an orange sofa" />
             </li>
             <li class="media-card media-card--portrait gallery-slider__slide">
-              <img src="images/slider-2.png" width="1016" height="1258" loading="lazy" alt="Dalmatian holding a red telephone receiver against a blue background" />
+              <img src="images/slider-2-1016.webp" srcset="images/slider-2-600.webp 600w, images/slider-2-1016.webp 1016w" sizes="(min-width: 1440px) 908px, (min-width: 768px) 63vw, 76vw" width="1016" height="1258" loading="lazy" alt="Dalmatian holding a red telephone receiver against a blue background" />
             </li>
             <li class="media-card media-card--portrait gallery-slider__slide">
-              <img src="images/slider-3.png" width="784" height="1048" loading="lazy" alt="Border collie leaping towards the camera against a blue sky" />
+              <img src="images/slider-3-784.webp" srcset="images/slider-3-600.webp 600w, images/slider-3-784.webp 784w" sizes="(min-width: 1440px) 908px, (min-width: 768px) 63vw, 76vw" width="784" height="1048" loading="lazy" alt="Border collie leaping towards the camera against a blue sky" />
             </li>
           </ul>
         </section>

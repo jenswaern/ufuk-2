@@ -393,6 +393,18 @@ html:has(.menu[open]) {
   }
 }
 
+/* Smal desktop: kolumnerna är för smala för att pilarna ska rymmas i
+ * kolumn 12, så Year/Service flyttas ett steg vänster (kol 4 och 7). */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .gallery-slider__meta-item--year {
+    grid-column: 4 / span 3;
+  }
+
+  .gallery-slider__meta-item--service {
+    grid-column: 7 / span 3;
+  }
+}
+
 /* Pilar – bara på desktop och bara när JS är igång */
 
 .gallery-slider__controls {

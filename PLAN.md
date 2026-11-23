@@ -44,11 +44,14 @@ css/
   sections.css   – en sektion i taget, mobil först
 js/
   main.js        – meny + slider
-images/          – bilder exporterade från Figma
+images/          – bilder från Figma, konverterade till WebP i två storlekar (srcset)
   icons/         – pilikoner (SVG) från Figma
 ```
 
-Mobilbilderna i galleriet (`gallery-2-mobile.jpg`, `gallery-3-mobile.jpg`) skiljer sig från desktop i Figma och används via `<picture>` i steg 4.
+Mobilbilderna i galleriet (`gallery-2-mobile-*`, `gallery-3-mobile-*`) skiljer sig från desktop i Figma och används via `<picture>`.
+
+Nya bilder: exportera från Figma och konvertera med `cwebp`, t.ex.
+`cwebp -q 78 -metadata none -resize 700 0 bild.jpg -o images/bild-700.webp`.
 
 ## Köra lokalt
 
@@ -60,14 +63,25 @@ python3 -m http.server 5500 --bind 127.0.0.1
 
 ## Steg
 
+Alla steg är klara.
+
 Varje steg avslutas med visuell jämförelse mot Figma i 375px och 1440px, och en commit.
 
-1. **Grund** – `index.html`-skelett med semantiska landmärken, reset, tokens, base-CSS, Google Fonts, export av alla bilder från Figma till `images/`.
-2. **Navigation + mobilmeny** – "Ufuk Demir" + Case/About/Contact på desktop, "Meny" + fullskärmsmeny på mobil (JS, Esc stänger, fokushantering).
-3. **Title Section + Text Section** – stor Anton-rubrik, "Section title" + brödtext i grid.
-4. **Gallery Grid** – en bred bild + två bilder i olika höjd. Mobilen visar andra bildproportioner/bilder än desktop – kontrolleras och byggs exakt (ev. `<picture>`).
-5. **List Section (Kompetenser)** – rubrik + Skills/Experience/Tools-listor i grid.
-6. **About Section** – rubrik, text och porträtt.
-7. **Gallery Slider** – Client/Year/Service-metadata, pilar och horisontell bildslider (scroll-snap + JS för pilar och inaktiv pil-state).
-8. **Link Footer** – tre "Link Wide"-rader med linjer och pil-ikon, hover-state.
-9. **Responsiv QA och finputs** – kontroll i 375 / 768 / 1024 / 1440 / 1920, pixeljämförelse mot Figma, tillgänglighet (kontrast, alt-texter, tangentbord), bildoptimering (`loading="lazy"`, `srcset`).
+1. ✅ **Grund** – `index.html`-skelett med semantiska landmärken, reset, tokens, base-CSS, Google Fonts, export av alla bilder från Figma till `images/`.
+2. ✅ **Navigation + mobilmeny** – "Ufuk Demir" + Case/About/Contact på desktop, "Meny" + fullskärmsmeny på mobil (JS, Esc stänger, fokushantering).
+3. ✅ **Title Section + Text Section** – stor Anton-rubrik, "Section title" + brödtext i grid.
+4. ✅ **Gallery Grid** – en bred bild + två bilder i olika höjd. Mobilen visar andra bildproportioner/bilder än desktop – kontrolleras och byggs exakt (ev. `<picture>`).
+5. ✅ **List Section (Kompetenser)** – rubrik + Skills/Experience/Tools-listor i grid.
+6. ✅ **About Section** – rubrik, text och porträtt.
+7. ✅ **Gallery Slider** – Client/Year/Service-metadata, pilar och horisontell bildslider (scroll-snap + JS för pilar och inaktiv pil-state).
+8. ✅ **Link Footer** – tre "Link Wide"-rader med linjer och pil-ikon, hover-state.
+9. ✅ **Responsiv QA och finputs** – kontroll i 375 / 768 / 1024 / 1440 / 1920, pixeljämförelse mot Figma, tillgänglighet (kontrast, alt-texter, tangentbord), bildoptimering (`loading="lazy"`, `srcset`).
+
+## Avvikelser och öppna frågor
+
+- **Text Section på mobil** har automatisk höjd (341px) i stället för Figmas fasta 288px, eftersom texten annars klipps.
+- **Gallery Slider 768–1023px**: Year/Service ligger i kolumn 4 och 7 i stället för 5 och 9, så att pilarna i kolumn 12 inte krockar med texten.
+- **Mobilmenyn** är egen design (finns inte i Figma).
+- **Kontrast**: `text/secondary` (#949494) mot bakgrunden ger 2,86:1, under WCAG AA (4,5:1, eller 3:1 för stor text). Förslag: #707070 (≈4,7:1).
+- **Porträttet** är bara 605px brett i Figma – ersätt med en större bild för skarpare resultat på Retina.
+- Footer-länkarna pekar på `#` tills fler sidor/mejladress finns.
