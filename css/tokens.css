@@ -1,0 +1,47 @@
+/*
+ * Designtokens från Figma-variablerna.
+ *
+ * Storlekar är flytande: exakt mobilvärdet vid 375px och exakt
+ * desktopvärdet vid 1440px, linjärt däremellan.
+ * --fluid är 0px vid 375px och 1px vid 1440px, så "N * var(--fluid)"
+ * växer från 0 till N px.
+ */
+
+:root {
+  --fluid: calc((100vw - 375px) / 1065);
+
+  /* Färger */
+  --color-text-primary: #141400;
+  --color-text-secondary: #949494;
+  --color-text-tertiary: #d1d1d1;
+  --color-border-primary: #141400;
+  --color-background-primary: #f8f8f8;
+
+  /* Typsnitt */
+  --font-heading: "Anton", "Arial Narrow", sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Typografi – mobil → desktop */
+  --text-heading: clamp(4rem, 4rem + 64 * var(--fluid), 8rem);           /* 64 → 128 */
+  --text-subheading: clamp(1.5rem, 1.5rem + 8 * var(--fluid), 2rem);     /* 24 → 32 */
+  --text-body: clamp(1.25rem, 1.25rem + 4 * var(--fluid), 1.5rem);       /* 20 → 24 */
+  --text-link-lg: clamp(2rem, 2rem + 16 * var(--fluid), 3rem);           /* 32 → 48 */
+  --text-link-sm: clamp(1.25rem, 1.25rem + 4 * var(--fluid), 1.5rem);    /* 20 → 24 */
+
+  /* Grid & spacing – mobil → desktop */
+  --grid-columns: 6;                                                       /* 6 → 12 */
+  --grid-margin: clamp(1rem, 1rem + 16 * var(--fluid), 2rem);            /* 16 → 32 */
+  --grid-gap: clamp(1rem, 1rem + 16 * var(--fluid), 2rem);               /* 16 → 32 */
+  --padding-md: clamp(1rem, 1rem + 16 * var(--fluid), 2rem);             /* 16 → 32 */
+  --padding-xl: clamp(4rem, 4rem + 64 * var(--fluid), 8rem);             /* 64 → 128 */
+  --radius: clamp(0.25rem, 0.25rem + 4 * var(--fluid), 0.5rem);          /* 4 → 8 */
+
+  /* Layout */
+  --design-width: 1440px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --grid-columns: 12;
+  }
+}

@@ -45,7 +45,18 @@ css/
 js/
   main.js        – meny + slider
 images/          – bilder exporterade från Figma
+  icons/         – pilikoner (SVG) från Figma
 ```
+
+Mobilbilderna i galleriet (`gallery-2-mobile.jpg`, `gallery-3-mobile.jpg`) skiljer sig från desktop i Figma och används via `<picture>` i steg 4.
+
+## Köra lokalt
+
+```bash
+python3 -m http.server 5500 --bind 127.0.0.1
+```
+
+Öppna sedan http://127.0.0.1:5500.
 
 ## Steg
 
