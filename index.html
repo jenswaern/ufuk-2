@@ -14,14 +14,58 @@
     <link rel="stylesheet" href="css/tokens.css" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/sections.css" />
+
+    <script src="js/main.js" defer></script>
   </head>
   <body>
     <a class="skip-link text-link-sm" href="#main">Skip to content</a>
 
     <div class="page">
       <header class="site-header">
-        <!-- Navigation – steg 2 -->
+        <a class="site-header__name text-link-sm" href="#main">Ufuk Demir</a>
+
+        <nav class="site-nav" aria-label="Main">
+          <ul class="site-nav__list">
+            <li><a class="site-nav__link text-link-sm" href="#case">Case</a></li>
+            <li><a class="site-nav__link text-link-sm" href="#about">About</a></li>
+            <li><a class="site-nav__link text-link-sm" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <button class="site-header__menu-button text-link-sm" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="menu" data-menu-open>
+          Meny
+        </button>
       </header>
+
+      <dialog class="menu" id="menu" aria-label="Meny" data-menu>
+        <div class="menu__header">
+          <span class="text-link-sm" aria-hidden="true">Ufuk Demir</span>
+          <button class="menu__close text-link-sm" type="button" data-menu-close>Stäng</button>
+        </div>
+
+        <nav aria-label="Mobile">
+          <ul class="menu__list">
+            <li>
+              <a class="link-wide text-link-lg" href="#case">
+                Case
+                <img class="link-wide__icon" src="images/icons/arrow-forward-footer.svg" width="48" height="48" alt="" />
+              </a>
+            </li>
+            <li>
+              <a class="link-wide text-link-lg" href="#about">
+                About
+                <img class="link-wide__icon" src="images/icons/arrow-forward-footer.svg" width="48" height="48" alt="" />
+              </a>
+            </li>
+            <li>
+              <a class="link-wide text-link-lg" href="#contact">
+                Contact
+                <img class="link-wide__icon" src="images/icons/arrow-forward-footer.svg" width="48" height="48" alt="" />
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </dialog>
 
       <main id="main">
         <!-- Title Section – steg 3 -->
