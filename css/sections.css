@@ -230,7 +230,70 @@ html:has(.menu[open]) {
   }
 }
 
-/* List Section – steg 5 */
+/* ---------------------------------------------------------------
+ * List Section (Kompetenser)
+ * Mobil (6 kol): rubrik överst, sedan 2 × 2 grupper om 3 kolumner.
+ * Desktop (12 kol): rubrik kol 1–4, grupper i kol 5–8 och 9–12.
+ * ------------------------------------------------------------- */
+
+.list-section__title {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  align-self: start;
+}
+
+.list-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-self: start;
+}
+
+.list-group--1,
+.list-group--3 {
+  grid-column: 1 / span 3;
+}
+
+.list-group--2,
+.list-group--4 {
+  grid-column: 4 / span 3;
+}
+
+.list-group--1,
+.list-group--2 {
+  grid-row: 2;
+}
+
+.list-group--3,
+.list-group--4 {
+  grid-row: 3;
+}
+
+@media (min-width: 768px) {
+  .list-section__title {
+    grid-column: 1 / span 4;
+  }
+
+  .list-group--1,
+  .list-group--3 {
+    grid-column: 5 / span 4;
+  }
+
+  .list-group--2,
+  .list-group--4 {
+    grid-column: 9 / span 4;
+  }
+
+  .list-group--1,
+  .list-group--2 {
+    grid-row: 1;
+  }
+
+  .list-group--3,
+  .list-group--4 {
+    grid-row: 2;
+  }
+}
 
 /* About Section – steg 6 */
 
