@@ -127,9 +127,42 @@ html:has(.menu[open]) {
   }
 }
 
-/* Title Section – steg 3 */
+/* ---------------------------------------------------------------
+ * Title Section
+ * ------------------------------------------------------------- */
 
-/* Text Section – steg 3 */
+.title-section__heading {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 768px) {
+  .title-section__heading {
+    grid-column: 1 / span 10;
+  }
+}
+
+/* ---------------------------------------------------------------
+ * Text Section
+ * Mobil: rubrik över text. Desktop: rubrik kol 1–4, text kol 5–10.
+ * ------------------------------------------------------------- */
+
+.text-section__title,
+.text-section__body {
+  grid-column: 1 / -1;
+  align-self: start;
+}
+
+@media (min-width: 768px) {
+  .text-section__title {
+    grid-column: 1 / span 4;
+    grid-row: 1;
+  }
+
+  .text-section__body {
+    grid-column: 5 / span 6;
+    grid-row: 1;
+  }
+}
 
 /* Gallery Grid – steg 4 */
 
