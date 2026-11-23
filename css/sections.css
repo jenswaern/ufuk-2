@@ -295,7 +295,36 @@ html:has(.menu[open]) {
   }
 }
 
-/* About Section – steg 6 */
+/* ---------------------------------------------------------------
+ * About Section
+ * Mobil: text över porträtt. Desktop: text kol 1–4, porträtt kol 9–12.
+ * ------------------------------------------------------------- */
+
+.about-section__text {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  grid-column: 1 / -1;
+  grid-row: 1;
+  align-self: start;
+}
+
+.about-section__image {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  align-self: start;
+}
+
+@media (min-width: 768px) {
+  .about-section__text {
+    grid-column: 1 / span 4;
+  }
+
+  .about-section__image {
+    grid-column: 9 / span 4;
+    grid-row: 1;
+  }
+}
 
 /* Gallery Slider – steg 7 */
 
