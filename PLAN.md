@@ -82,6 +82,6 @@ Varje steg avslutas med visuell jämförelse mot Figma i 375px och 1440px, och e
 - **Text Section på mobil** har automatisk höjd (341px) i stället för Figmas fasta 288px, eftersom texten annars klipps.
 - **Gallery Slider 768–1023px**: Year/Service ligger i kolumn 4 och 7 i stället för 5 och 9, så att pilarna i kolumn 12 inte krockar med texten.
 - **Mobilmenyn** är egen design (finns inte i Figma).
-- **Kontrast**: `text/secondary` (#949494) mot bakgrunden ger 2,86:1, under WCAG AA (4,5:1, eller 3:1 för stor text). Förslag: #707070 (≈4,7:1).
+- **Kontrast**: `text/secondary` (#949494) mot bakgrunden ger 2,86:1, under WCAG AA (4,5:1, eller 3:1 för stor text). Beslut: Figmas färg behålls. (#707070 skulle ge ≈4,7:1 om det blir aktuellt.)
 - **Porträttet** är bara 605px brett i Figma – ersätt med en större bild för skarpare resultat på Retina.
 - Footer-länkarna pekar på `#` tills fler sidor/mejladress finns.
