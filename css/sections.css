@@ -326,6 +326,141 @@ html:has(.menu[open]) {
   }
 }
 
-/* Gallery Slider – steg 7 */
+/* ---------------------------------------------------------------
+ * Gallery Slider
+ * Metadata (dl) på rad 1, pilar till höger på desktop, och en
+ * horisontell bildrad som går ut till sidans högerkant.
+ * Bildraden scrollar med scroll-snap; JS styr pilarna.
+ * ------------------------------------------------------------- */
+
+.gallery-slider {
+  container-type: inline-size;
+  /* Bildradens höjd i förhållande till innehållsbredden (från Figma) */
+  --slider-ratio: calc(354 / 343);
+}
+
+@media (min-width: 768px) {
+  .gallery-slider {
+    --slider-ratio: calc(1135 / 1376);
+  }
+}
+
+/* Metadata */
+
+.gallery-slider__meta {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: subgrid;
+  row-gap: var(--grid-gap);
+  align-self: start;
+}
+
+.gallery-slider__meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gallery-slider__meta-item--client {
+  grid-column: 1 / span 3;
+}
+
+.gallery-slider__meta-item--year {
+  grid-column: 4 / span 3;
+}
+
+.gallery-slider__meta-item--service {
+  grid-column: 1 / span 3;
+  grid-row: 2;
+}
+
+@media (min-width: 768px) {
+  .gallery-slider__meta {
+    grid-column: 1 / span 11;
+  }
+
+  .gallery-slider__meta-item--year {
+    grid-column: 5 / span 3;
+  }
+
+  .gallery-slider__meta-item--service {
+    grid-column: 9 / span 3;
+    grid-row: 1;
+  }
+}
+
+/* Pilar – bara på desktop och bara när JS är igång */
+
+.gallery-slider__controls {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .js .gallery-slider__controls {
+    display: flex;
+    gap: 16px;
+    grid-column: 12;
+    grid-row: 1;
+    justify-self: end;
+    align-self: start;
+  }
+}
+
+.gallery-slider__button {
+  width: 32px;
+  height: 32px;
+  color: var(--color-text-primary);
+  transition: color 0.2s ease;
+}
+
+.gallery-slider__button::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: currentColor;
+  -webkit-mask: url("../images/icons/arrow-forward.svg") center / contain no-repeat;
+  mask: url("../images/icons/arrow-forward.svg") center / contain no-repeat;
+}
+
+/* Bakåtpilen är framåtpilen spegelvänd, precis som i Figma */
+.gallery-slider__button--prev::before {
+  -webkit-mask-image: url("../images/icons/arrow-back.svg");
+  mask-image: url("../images/icons/arrow-back.svg");
+  transform: scaleX(-1);
+}
+
+.gallery-slider__button[aria-disabled="true"] {
+  color: var(--color-text-tertiary);
+  cursor: default;
+}
+
+/* Bildrad */
+
+.gallery-slider__track {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: flex;
+  gap: var(--grid-gap);
+  margin-right: calc(-1 * var(--grid-margin));
+  padding-right: var(--grid-margin);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.gallery-slider__track::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-slider__slide {
+  flex: 0 0 auto;
+  /* Kortets höjd = innehållsbredd × proportion; bredd = höjd × 4/5 */
+  width: calc(100cqw * var(--slider-ratio) * 0.8);
+  scroll-snap-align: start;
+}
 
 /* Link Footer – steg 8 */
