@@ -9,9 +9,12 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: var(--grid-gap);
   padding: var(--grid-margin);
   border-top: 1px solid var(--color-border-primary);
+}
+
+.link-wide picture {
+  display: contents;
 }
 
 .link-wide__icon {
@@ -463,4 +466,9 @@ html:has(.menu[open]) {
   scroll-snap-align: start;
 }
 
-/* Link Footer – steg 8 */
+/* ---------------------------------------------------------------
+ * Link Footer
+ * Tre Link Wide-rader – all stil ligger i .link-wide överst.
+ * Pilen är 48px på desktop och 32px på mobil (egna ikonfiler
+ * från Figma, växlas med <picture>).
+ * ------------------------------------------------------------- */
